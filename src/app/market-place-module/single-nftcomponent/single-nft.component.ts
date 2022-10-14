@@ -3,10 +3,10 @@ import {Nft} from '../nfts.model';
 
 @Component({
   selector: 'app-single-nftcomponent',
-  templateUrl: './single-nftcomponent.component.html',
-  styleUrls: ['./single-nftcomponent.component.scss']
+  templateUrl: './single-nft.component.html',
+  styleUrls: ['./single-nft.component.scss']
 })
-export class SingleNFTComponentComponent implements OnInit {
+export class SingleNFTComponent implements OnInit {
 
   public nft: Nft = {
     chain: 'ethereum',

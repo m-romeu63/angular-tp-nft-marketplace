@@ -1,8 +1,11 @@
 <div class="card" style="width: 18rem;">
-  <img src="{{nft.cached_file_url}}" class="card-img-top" alt="{{nft.metadata?.description}}">
+  <img [src]="nft.cached_file_url" class="card-img-top" alt="{{nft.metadata?.description}}">
   <div class="card-body">
     <h5 class="card-title">{{nft.metadata?.name}}</h5>
-    <div class="d-flex justify-content-center mt-3">
+    <div>
+      <div class="card-text">
+        <app-nft-price [price]="nft.price"></app-nft-price>
+      </div>
       <a href="#" class="btn btn-primary">Ajouter au panier</a>
     </div>
   </div>

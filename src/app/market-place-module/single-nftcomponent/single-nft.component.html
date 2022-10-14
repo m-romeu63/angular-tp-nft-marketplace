@@ -2,11 +2,13 @@
   <img [src]="nft.cached_file_url" class="card-img-top" alt="{{nft.metadata?.description}}">
   <div class="card-body">
     <h5 class="card-title">{{nft.metadata?.name}}</h5>
+    <div *ngIf="nft.isFavorite === true">❤️</div>
     <div>
       <div class="card-text">
         <app-nft-price [price]="nft.price"></app-nft-price>
       </div>
-      <a href="#" class="btn btn-primary">Ajouter au panier</a>
+      <app-favorite-nft [favorite]="nft.isFavorite" (favoriteChange)="onFavoriteChange($event)"></app-favorite-nft>
+      <a href="#" class="btn btn-primary mx-3">Ajouter au panier</a>
     </div>
   </div>
 </div>

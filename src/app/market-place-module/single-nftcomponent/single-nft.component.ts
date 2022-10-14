@@ -34,4 +34,8 @@ export class SingleNFTComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onFavoriteChange(newFavorite: boolean){
+    this.nft.isFavorite = newFavorite;
+  }
+
 }

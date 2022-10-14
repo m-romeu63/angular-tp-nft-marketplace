@@ -1,14 +1,20 @@
 <div class="card" style="width: 18rem;">
   <img [src]="nft.cached_file_url" class="card-img-top" alt="{{nft.metadata?.description}}">
   <div class="card-body">
-    <h5 class="card-title">{{nft.metadata?.name}}</h5>
-    <div *ngIf="nft.isFavorite === true">❤️</div>
+    <div class="d-flex justify-content-between">
+      <h5 class="card-title">{{nft.metadata!.name}}</h5>
+      <!--On a pas encore vu *ngIf mais ça permet d'ajouter des conditions d'affichage-->
+      <div *ngIf="nft.isFavorite == true">❤️</div>
+</div>
     <div>
       <div class="card-text">
         <app-nft-price [price]="nft.price"></app-nft-price>
       </div>
+      <!--Ajout du composant du bouton ajout aux favoris en récupérant la valeur de favorite & de l'event favoriteChange-->
       <app-favorite-nft [favorite]="nft.isFavorite" (favoriteChange)="onFavoriteChange($event)"></app-favorite-nft>
-      <a href="#" class="btn btn-primary mx-3">Ajouter au panier</a>
+      <div class="d-flex flex-column justify-content-center mt-3">
+        <a href="#" class="btn btn-primary">Ajouter au panier</a>
+      </div>
     </div>
   </div>
 </div>

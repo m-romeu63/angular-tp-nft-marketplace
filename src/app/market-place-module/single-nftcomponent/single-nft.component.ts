@@ -34,6 +34,7 @@ export class SingleNFTComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //permet de récupérer la valeur modifiée de nft.isFavorite au clic du bouton newFavorite = favorite de favorite-nft
   onFavoriteChange(newFavorite: boolean){
     this.nft.isFavorite = newFavorite;
   }

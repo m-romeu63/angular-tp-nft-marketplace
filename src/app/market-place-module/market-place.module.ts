@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SingleNFTComponent } from './single-nftcomponent/single-nft.component';
 import { NftPriceComponent } from './nft-price/nft-price.component';
 import { FavoriteNftComponent } from './favorite-nft/favorite-nft.component';
+import { NftListComponent } from './nft-list/nft-list.component';
 
 
 
@@ -10,7 +11,8 @@ import { FavoriteNftComponent } from './favorite-nft/favorite-nft.component';
   declarations: [
     SingleNFTComponent,
     NftPriceComponent,
-    FavoriteNftComponent
+    FavoriteNftComponent,
+    NftListComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { FavoriteNftComponent } from './favorite-nft/favorite-nft.component';
   exports: [
     SingleNFTComponent,
     NftPriceComponent,
-    FavoriteNftComponent
+    FavoriteNftComponent,
+    NftListComponent
   ]
 })
 export class MarketPlaceModule { }

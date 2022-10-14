@@ -10,6 +10,10 @@
       <div class="card-text">
         <app-nft-price [price]="nft.price"></app-nft-price>
       </div>
+      <div class="card-text">
+        <div>Mint date</div>
+        <div>{{nft.mint_date | date:'yyyy-MM-dd'}}</div>
+      </div>
       <!--Ajout du composant du bouton ajout aux favoris en récupérant la valeur de favorite & de l'event favoriteChange-->
       <app-favorite-nft [favorite]="nft.isFavorite" (favoriteChange)="onFavoriteChange($event)"></app-favorite-nft>
       <div class="d-flex flex-column justify-content-center mt-3">

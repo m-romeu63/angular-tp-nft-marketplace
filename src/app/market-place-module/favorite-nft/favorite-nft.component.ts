@@ -21,8 +21,8 @@ export class FavoriteNftComponent implements OnInit {
   }
 
   addToFavorite(): void {
-    //je modifie la valeur de favorite selon sa valeur de départ et j'utilise un ternaire plutôt qu'un if...else
-    this.favorite ? this.favorite = false : this.favorite = true;
+    //je modifie la valeur de favorite selon sa valeur de départ et je l'inverse à chaque fois
+    this.favorite = !this.favorite;
     //j'émets la nouvelle valeur de favorite dans une variable diff pour la faire passer aux autres composants
     this.favoriteChange.emit(this.favorite);
   }

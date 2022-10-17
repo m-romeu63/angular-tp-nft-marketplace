@@ -3,20 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { MarketPlaceModule } from './market-place-module/market-place.module';
 import { AppComponent } from './app.component';
-import { NftListService } from './nft-list.service';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
+import { NftDescriptionComponent } from './market-place-module/nft-description/nft-description.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NftDescriptionComponent
   ],
   imports: [
     BrowserModule,
     MarketPlaceModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES)
   ],
-  providers: [
-    NftListService,
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NftListService } from 'src/app/nft-list.service';
-import { Nft } from '../nfts.model'
+import { Nft } from '../nfts.model';
+import {filter, map, tap} from "rxjs";
 
 @Component({
   selector: 'app-nft-list',
@@ -8,13 +9,15 @@ import { Nft } from '../nfts.model'
   styleUrls: ['./nft-list.component.scss']
 })
 export class NftListComponent implements OnInit {
-  nfts: Array<Nft>;
+  public nfts: Array<Nft> | null = new Array<Nft>();
 
   constructor(private nftListService: NftListService) {
-    this.nfts = nftListService.getAll();
   }
 
   ngOnInit(): void {
+    this.nftListService.getAll().subscribe(response => {
+      this.nfts = response.body!.nfts;
+    })
   }
 
 }

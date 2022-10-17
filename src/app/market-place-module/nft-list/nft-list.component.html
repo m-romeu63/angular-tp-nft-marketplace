@@ -1,3 +1,5 @@
 <div class="d-flex justify-content-between flex-wrap">
-  <app-single-nftcomponent *ngFor="let nft of nfts" [nft]="nft" class="mb-2"></app-single-nftcomponent>
+  <div *ngFor="let nft of nfts" class="my-3">
+    <app-single-nftcomponent [nft]="nft" class="mb-2"></app-single-nftcomponent>
+  </div>
 </div>

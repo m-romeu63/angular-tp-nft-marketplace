@@ -94,3 +94,8 @@ export interface Nfts {
   nfts: Nft[];
   continuation: string;
 }
+
+export interface SingleNft {
+  response: string;
+  nft: Nft;
+}

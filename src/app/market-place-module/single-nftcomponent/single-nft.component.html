@@ -1,8 +1,8 @@
 <div class="card" style="width: 18rem;">
-  <img [src]="nft.cached_file_url" class="card-img-top" alt="{{nft.metadata?.description}}">
+  <img [routerLink]="['description', nft.chain, nft.contract_address, nft.token_id]" [src]="nft.cached_file_url" class="card-img-top" alt="{{nft.metadata?.description}}">
   <div class="card-body">
     <div class="d-flex justify-content-between">
-      <h5 class="card-title">{{nft.metadata!.name}}</h5>
+      <h5 class="card-title" >{{nft.metadata!.name}}</h5>
       <!--On a pas encore vu *ngIf mais ça permet d'ajouter des conditions d'affichage-->
       <div *ngIf="nft.isFavorite == true">❤️</div>
 </div>

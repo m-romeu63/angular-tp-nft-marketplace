@@ -1,1 +1,35 @@
-<p>nft-description works!</p>
+<div class="row">
+  <div class="col-2">
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img [src]="nft!.cached_file_url" class="card-img-top" alt="{{nft!.metadata!.name}}">
+    </div>
+  </div>
+  <div class="col-4">
+    <h2> {{nft.metadata!.name}}</h2>
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+            Description
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+             data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            {{nft.metadata!.description}}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="alert alert-dark mt-3" role="alert">
+          Minted date: {{nft.mint_date | date : 'YYYY-MM-dd'}}
+        </div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
